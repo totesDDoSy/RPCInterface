@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan( basePackages = "com.csanford.pathfindersheet" )
+@ComponentScan( basePackages = "com.csanford.springframeworktest" )
 public class WebConfig
 {
 
