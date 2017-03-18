@@ -4,7 +4,7 @@
 
     <groupId>com.csanford</groupId>
     <artifactId>SpringFrameworkTest</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.3-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>SpringFrameworkTest</name>
@@ -16,6 +16,13 @@
     </properties>
 
     <dependencies>
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>3.8.2</version>
+	    <scope>test</scope>
+	    <type>jar</type>
+	</dependency>
 	<dependency>
 	    <groupId>javax</groupId>
 	    <artifactId>javaee-web-api</artifactId>
@@ -31,6 +38,36 @@
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-test</artifactId>
 	    <version>4.0.5.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit-dep</artifactId>
+	    <version>4.10</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.mockito</groupId>
+	    <artifactId>mockito-core</artifactId>
+	    <version>1.9.5</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hamcrest</groupId>
+	    <artifactId>hamcrest-library</artifactId>
+	    <version>1.3</version>
+	</dependency>
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	</dependency>
+	<dependency>
+	    <groupId>javax.servlet.jsp</groupId>
+	    <artifactId>javax.servlet.jsp-api</artifactId>
+	    <version>2.3.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
 	</dependency>
     </dependencies>
 
