@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+	<title>List of RPCs</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+	<link rel="stylesheet" type="text/css"
+	      th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+    </head>
+    <body>
+	<div class="container">
+	    <div class="starter-template">
+		<h3>&nbsp;</h3>
+	    </div>
+	    <div class="row">
+		<div class="col-xs-12">
+		    <a th:href="@{/add}" class="btn btn-success">&plus;&nbsp;Add</a>
+		    <div class="panel panel-default">
+			<div class="panel-content">
+			    <div class="container-fluid" th:if="${rpclist != null}">
+				<table class="table table-hover table-responsive">
+				    <thead>
+					<tr>
+					    <td>Name</td>
+					    <td>IP</td>
+					    <td>&nbsp;</td>
+					</tr>
+				    </thead>
+				    <tbody>
+					<tr th:each="rpc  : ${rpclist}">
+					    <td th:text="${rpc.name}">Name</td>
+					    <td th:text="${rpc.ipaddr}">IP</td>
+					    <td>
+						<div class="btn-group" >
+						    <a th:href="@{/edit/{id}(id=${rpc.id})}" class="btn btn-primary">Edit</a>
+						    <a th:href="@{/delete/{id}(id=${rpc.id})}" class="btn btn-danger">&times;</a>
+						</div>
+					    </td>
+					</tr>
+				    </tbody>
+				</table>
+			    </div>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</div>
+    </body>
+</html>

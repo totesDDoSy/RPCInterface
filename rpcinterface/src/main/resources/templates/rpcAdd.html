@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+	<title>Add/Edit an RPC</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+	<link rel="stylesheet" type="text/css"
+	      th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+    </head>
+    <body>
+	<div class="container" >
+	    <div class="well">
+		<form action="#" th:action="@{/add}" th:object="${rpcmodel}" method="post">
+		    <p>Name: <input type="text" th:field="*{name}" th:value="*{name}" /></p>
+		    <p>IP: <input type="text" th:field="*{ipaddr}" /></p>
+		    <p>Username: <input type="text" th:field="*{username}" /></p>
+		    <p>Password: <input type="password" th:field="*{password}" /></p>
+		    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+		</form>
+	    </div>
+	</div>
+    </body>
+</html>
