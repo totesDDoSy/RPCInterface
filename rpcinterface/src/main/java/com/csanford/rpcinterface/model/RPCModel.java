@@ -1,6 +1,7 @@
 package com.csanford.rpcinterface.model;
 
 import com.csanford.rpcinterface.h2.RPC;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -8,7 +9,10 @@ import com.csanford.rpcinterface.h2.RPC;
  */
 public class RPCModel
 {
+	@NotEmpty
     String name;
+
+	@NotEmpty
     String ipaddr;
     String username;
     String password;

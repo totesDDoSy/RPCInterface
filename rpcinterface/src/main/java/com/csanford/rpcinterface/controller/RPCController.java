@@ -4,9 +4,11 @@ import com.csanford.rpcinterface.h2.RPC;
 import com.csanford.rpcinterface.h2.RPCRepository;
 import com.csanford.rpcinterface.model.RPCModel;
 import java.util.ArrayList;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,17 +35,20 @@ public class RPCController
     }
 
     @GetMapping( "/add" )
-    public String displayAddRpc( Model model )
+    public String displayAddRpc( RPCModel rpcmodel )
     {
-	model.addAttribute( "rpcmodel", new RPCModel() );
-	return "rpcAdd";
+		return "rpcAdd";
     }
 
     @PostMapping( "/add" )
-    public String addRpc( @ModelAttribute RPCModel rpc )
+    public String addRpc( @Valid RPCModel rpcmodel, BindingResult bindingResult, Model model )
     {
-	rpcRepository.save( rpc.convertToDAO() );
-	return "redirect:/";
+		if( bindingResult.hasErrors() )
+		{
+			return "rpcAdd";
+		}
+		rpcRepository.save( rpcmodel.convertToDAO() );
+		return "redirect:/";
     }
 
     @GetMapping( "/edit/{rpcid}" )
@@ -64,5 +69,12 @@ public class RPCController
 	rpcRepository.save( rpc );
 	return "redirect:/";
     }
+
+	@RequestMapping( "/delete/{rpcid}" )
+	public String deleteRpc( @PathVariable( value = "rpcid" ) Long rpcid )
+	{
+		rpcRepository.delete( rpcid );
+		return "redirect:/";
+	}
 
 }
