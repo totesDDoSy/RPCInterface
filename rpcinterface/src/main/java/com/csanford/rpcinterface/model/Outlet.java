@@ -10,13 +10,6 @@ public class Outlet
     String name;
     Boolean status;
 
-    public Outlet( Integer id, String name, Boolean status )
-    {
-	this.id = id;
-	this.name = name;
-	this.status = status;
-    }
-
     public Integer getId()
     {
 	return id;
