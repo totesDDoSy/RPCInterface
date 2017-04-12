@@ -36,8 +36,8 @@ and open the template in the editor.
 					<tr th:each="outlet  : ${outletlist}">
 					    <td th:text="${outlet.id}">ID</td>
 					    <td th:text="${outlet.name}">Name</td>
-					    <td th:if="${outlet.status}" ><span>On</span></td>
-					    <td th:unless="${outlet.status}"><span>Off</span></td>
+					    <td th:if="${outlet.status}" ><span class="text-success">On</span></td>
+					    <td th:unless="${outlet.status}"><span class="text-danger">Off</span></td>
 					</tr>
 				    </tbody>
 				</table>
@@ -50,13 +50,13 @@ and open the template in the editor.
 		<div class="btn-group btn-group-justified">
 		    <a class='btn btn-default' th:href="@{/}">Back</a>
 		    <div class='btn-group'>
-			<button id="on-button" class='btn btn-success'>On</button>
+			<button id="on-button" class='btn btn-success disabled'>On</button>
 		    </div>
 		    <div class='btn-group'>
-			<button id="off-button" class='btn btn-danger'>Off</button>
+			<button id="off-button" class='btn btn-danger disabled'>Off</button>
 		    </div>
 		    <div class='btn-group'>
-			<button id="reboot-button" class='btn btn-info'>Reboot</button>
+			<button id="reboot-button" class='btn btn-info disabled'>Reboot</button>
 		    </div>
 		    <div class="btn-group">
 			<button id='refresh-button' class='btn btn-primary'>Refresh</button>

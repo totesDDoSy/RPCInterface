@@ -9,6 +9,18 @@ $(document).ready(function ()
 	{
 	    $('tr.info').removeClass('info');
 	    $(this).addClass('info');
+	    let status = $(this).children('td').last().text();
+	    if (status === "On")
+	    {
+		$('#on-button').addClass('disabled');
+		$('#off-button').removeClass('disabled');
+		$('#reboot-button').removeClass('disabled');
+	    } else if (status === "Off")
+	    {
+		$('#on-button').removeClass('disabled');
+		$('#off-button').addClass('disabled');
+		$('#reboot-button').addClass('disabled');
+	    }
 	});
     }
 

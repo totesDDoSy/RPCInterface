@@ -38,6 +38,7 @@ public class OutletController
 	    throws InterruptedException
     {
 	powerOnOutlet( rpcId, outletId );
+	sleep( 1500 );
 	return "redirect:/outlets/" + rpcId;
     }
 
@@ -47,6 +48,7 @@ public class OutletController
 	    throws InterruptedException
     {
 	powerOffOutlet( rpcId, outletId );
+	sleep( 1500 );
 	return "redirect:/outlets/" + rpcId;
     }
 
@@ -56,6 +58,7 @@ public class OutletController
 	    throws InterruptedException
     {
 	rebootOutlet( rpcId, outletId );
+	sleep( 1500 );
 	return "redirect:/outlets/" + rpcId;
     }
 
