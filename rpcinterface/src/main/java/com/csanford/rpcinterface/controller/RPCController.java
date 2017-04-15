@@ -37,25 +37,26 @@ public class RPCController
     @GetMapping( "/add" )
     public String displayAddRpc( RPCModel rpcmodel )
     {
-		return "rpcAdd";
+	return "rpcAdd";
     }
 
     @PostMapping( "/add" )
-    public String addRpc( @Valid RPCModel rpcmodel, BindingResult bindingResult, Model model )
+    public String addRpc( @Valid RPCModel rpcmodel, BindingResult bindingResult,
+	    Model model )
     {
-		if( bindingResult.hasErrors() )
-		{
-			return "rpcAdd";
-		}
-		rpcRepository.save( rpcmodel.convertToDAO() );
-		return "redirect:/";
+	if ( bindingResult.hasErrors() )
+	{
+	    return "rpcAdd";
+	}
+	rpcRepository.save( rpcmodel.convertToDAO() );
+	return "redirect:/";
     }
 
     @GetMapping( "/edit/{rpcid}" )
     public String displayEditRpc( @PathVariable( value = "rpcid" ) Long rpcId,
 	    Model model )
     {
-	model.addAttribute( "rpcmodel", RPCModel.convertFromDAO( rpcRepository.
+	model.addAttribute( "RPCModel", RPCModel.convertFromDAO( rpcRepository.
 		findOne( rpcId ) ) );
 	return "rpcAdd";
     }
@@ -70,11 +71,11 @@ public class RPCController
 	return "redirect:/";
     }
 
-	@RequestMapping( "/delete/{rpcid}" )
-	public String deleteRpc( @PathVariable( value = "rpcid" ) Long rpcid )
-	{
-		rpcRepository.delete( rpcid );
-		return "redirect:/";
-	}
+    @RequestMapping( "/delete/{rpcid}" )
+    public String deleteRpc( @PathVariable( value = "rpcid" ) Long rpcid )
+    {
+	rpcRepository.delete( rpcid );
+	return "redirect:/";
+    }
 
 }
