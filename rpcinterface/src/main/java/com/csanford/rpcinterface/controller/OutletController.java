@@ -2,14 +2,22 @@ package com.csanford.rpcinterface.controller;
 
 import static java.lang.Thread.sleep;
 
+import com.csanford.rpcinterface.ajax.AjaxResponseBody;
+import com.csanford.rpcinterface.ajax.OutletRename;
 import com.csanford.rpcinterface.h2.RPCRepository;
 import com.csanford.rpcinterface.model.Outlet;
 import com.csanford.rpcinterface.utils.RPCHelper;
 import java.util.List;
+import java.util.stream.Collectors;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -27,67 +35,65 @@ public class OutletController
     public String displayOutletList( @PathVariable( value = "rpcid" ) Long rpcId,
 	    Model model )
     {
-	List<Outlet> outlets = getOutletsForRpcId( rpcId );
+	final String ipaddr = rpcRepository.findOne( rpcId ).
+		getIpaddr();
+	RPCHelper rpcHelper = new RPCHelper( ipaddr );
+	List<Outlet> outlets = rpcHelper.getOutlets();
+	if ( outlets == null )
+	{
+	    return "redirect:/?error=true&ip=" + ipaddr;
+	}
 	model.addAttribute( "outletlist", outlets );
 	return "outletList";
     }
 
-    @RequestMapping( "/{rpcid}/on/{outletid}" )
-    public String turnOnOutlet( @PathVariable( value = "rpcid" ) Long rpcId,
+    @RequestMapping( "/{rpcid}/{cmd}/{outletid}" )
+    public String outletCommand( @PathVariable( value = "rpcid" ) Long rpcId,
+	    @PathVariable( value = "cmd" ) String cmd,
 	    @PathVariable( value = "outletid" ) Integer outletId, Model model )
 	    throws InterruptedException
     {
-	powerOnOutlet( rpcId, outletId );
+	RPCHelper rpcHelper = new RPCHelper( rpcRepository.findOne( rpcId ).
+		getIpaddr() );
+	switch ( cmd.toLowerCase() )
+	{
+	    case "on":
+		rpcHelper.turnOnOutlet( outletId );
+		break;
+	    case "off":
+		rpcHelper.turnOffOutlet( outletId );
+		break;
+	    case "reboot":
+		rpcHelper.rebootOutlet( outletId );
+		break;
+	    default:
+		return "redirect:/outlets/" + rpcId;
+	}
 	sleep( 1500 );
 	return "redirect:/outlets/" + rpcId;
     }
 
-    @RequestMapping( "/{rpcid}/off/{outletid}" )
-    public String turnOffOutlet( @PathVariable( value = "rpcid" ) Long rpcId,
-	    @PathVariable( value = "outletid" ) Integer outletId, Model model )
-	    throws InterruptedException
+    @PostMapping( "/{rpcId}/rename/{outletId}" )
+    public ResponseEntity<?> renameOutlet(
+	    @PathVariable( value = "rpcId" ) Long rpcId,
+	    @PathVariable( value = "outletId" ) Integer outletId,
+	    @Valid @RequestBody OutletRename rename, Errors errors )
     {
-	powerOffOutlet( rpcId, outletId );
-	sleep( 1500 );
-	return "redirect:/outlets/" + rpcId;
-    }
+	AjaxResponseBody result = new AjaxResponseBody();
 
-    @RequestMapping( "/{rpcid}/reboot/{outletid}" )
-    public String rebootOutlet( @PathVariable( value = "rpcid" ) Long rpcId,
-	    @PathVariable( value = "outletid" ) Integer outletId, Model model )
-	    throws InterruptedException
-    {
-	rebootOutlet( rpcId, outletId );
-	sleep( 1500 );
-	return "redirect:/outlets/" + rpcId;
-    }
+	if ( errors.hasErrors() )
+	{
 
-    private List<Outlet> getOutletsForRpcId( Long rpcid )
-    {
-	RPCHelper rpcHelper = new RPCHelper( rpcRepository.findOne( rpcid ).
-		getIpaddr() );
+	    result.setMsg( errors.getAllErrors()
+		    .stream().map( x -> x.getDefaultMessage() )
+		    .collect( Collectors.joining( "," ) ) );
 
-	return rpcHelper.getOutlets();
-    }
+	    return ResponseEntity.badRequest().body( result );
 
-    private void powerOnOutlet( Long rpcId, Integer outletId )
-    {
-	RPCHelper rpcHelper = new RPCHelper( rpcRepository.findOne( rpcId ).
-		getIpaddr() );
-	rpcHelper.turnOnOutlet( outletId );
-    }
+	}
 
-    private void powerOffOutlet( Long rpcId, Integer outletId )
-    {
-	RPCHelper rpcHelper = new RPCHelper( rpcRepository.findOne( rpcId ).
-		getIpaddr() );
-	rpcHelper.turnOffOutlet( outletId );
-    }
+	result.setMsg( rename.getNewName() );
 
-    private void rebootOutlet( Long rpcId, Integer outletId )
-    {
-	RPCHelper rpcHelper = new RPCHelper( rpcRepository.findOne( rpcId ).
-		getIpaddr() );
-	rpcHelper.rebootOutlet( outletId );
+	return ResponseEntity.ok( result );
     }
 }

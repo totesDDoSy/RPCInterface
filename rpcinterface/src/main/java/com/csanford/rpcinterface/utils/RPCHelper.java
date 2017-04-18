@@ -16,6 +16,15 @@ public class RPCHelper
     private final String rpcIp;
     private static final int OUTLETS_OPT = (int) '1';
 
+    private static final int CONFIG_OPT = (int) '3';
+    private static final int CONFIG_OUTLETS_OPT = (int) '6';
+    private static final int RENAME_CONFIG_OPT = (int) '4';
+
+    private static final String COMMAND_ON = "on";
+    private static final String COMMAND_OFF = "off";
+    private static final String COMMAND_REBOOT = "reboot";
+    private static final int TCP_PORT = 23;
+
     public RPCHelper( String rpcIp )
     {
 	this.rpcIp = rpcIp;
@@ -23,66 +32,55 @@ public class RPCHelper
 
     public List<Outlet> getOutlets()
     {
-	SocketHelper socketHelper = new SocketHelper( 23, rpcIp );
-	BufferedReader reader = socketHelper.getReader();
-	BufferedWriter writer = socketHelper.getWriter();
-	List<Outlet> outlets = new ArrayList<>();
-
-	if ( navigateToOutlets( reader, writer ) )
-	{
-	    outlets = getOutletsFromOutletScreen( reader );
-	}
-
 	try
 	{
+	    SocketHelper socketHelper = new SocketHelper( TCP_PORT, rpcIp );
+	    BufferedReader reader = socketHelper.getReader();
+	    BufferedWriter writer = socketHelper.getWriter();
+	    List<Outlet> outlets = new ArrayList<>();
+
+	    if ( navigateToOutlets( reader, writer ) )
+	    {
+		outlets = getOutletsFromOutletScreen( reader );
+	    }
 	    reader.close();
 	    writer.close();
+
+	    return outlets;
 	}
 	catch ( IOException ex )
 	{
-	    Logger.getLogger( RPCHelper.class.getName() ).
-		    log( Level.SEVERE, null, ex );
+	    return null;
 	}
-
-	return outlets;
     }
 
     public void turnOnOutlet( Integer outletId )
     {
-	SocketHelper socketHelper = new SocketHelper( 23, rpcIp );
-	BufferedReader reader = socketHelper.getReader();
-	BufferedWriter writer = socketHelper.getWriter();
-
-	if ( navigateToOutlets( reader, writer ) )
-	{
-	    powerOnOutlet( outletId, reader, writer );
-	}
-
-	try
-	{
-	    reader.close();
-	    writer.close();
-	}
-	catch ( IOException ex )
-	{
-	    Logger.getLogger( RPCHelper.class.getName() ).
-		    log( Level.SEVERE, null, ex );
-	}
+	outletCommand( outletId, COMMAND_ON );
     }
 
     public void turnOffOutlet( Integer outletId )
     {
-	SocketHelper socketHelper = new SocketHelper( 23, rpcIp );
-	BufferedReader reader = socketHelper.getReader();
-	BufferedWriter writer = socketHelper.getWriter();
+	outletCommand( outletId, COMMAND_OFF );
+    }
 
-	if ( navigateToOutlets( reader, writer ) )
-	{
-	    powerOffOutlet( outletId, reader, writer );
-	}
+    public void rebootOutlet( Integer outletId )
+    {
+	outletCommand( outletId, COMMAND_REBOOT );
+    }
 
+    public void renameOutlet( Integer outletId, String newName )
+    {
 	try
 	{
+	    SocketHelper socketHelper = new SocketHelper( TCP_PORT, rpcIp );
+	    BufferedReader reader = socketHelper.getReader();
+	    BufferedWriter writer = socketHelper.getWriter();
+
+	    if ( navigateToOutletRename( reader, writer ) )
+	    {
+		executeRename( reader, writer, outletId, newName );
+	    }
 	    reader.close();
 	    writer.close();
 	}
@@ -93,27 +91,22 @@ public class RPCHelper
 	}
     }
 
-    public void rebootOutlet( Integer outletId )
+    // ----------- HELPER METHODS -------------- //
+    private void navigateTo( BufferedReader reader, BufferedWriter writer,
+	    String lastLine, int command_opt ) throws
+	    IOException
     {
-	SocketHelper socketHelper = new SocketHelper( 23, rpcIp );
-	BufferedReader reader = socketHelper.getReader();
-	BufferedWriter writer = socketHelper.getWriter();
-
-	if ( navigateToOutlets( reader, writer ) )
+	String line = "";
+	while ( !line.contains( lastLine ) )
 	{
-	    rebootOutlet( outletId, reader, writer );
+	    line = reader.readLine();
 	}
-
-	try
+	while ( (char) reader.read() != '>' )
 	{
-	    reader.close();
-	    writer.close();
 	}
-	catch ( IOException ex )
-	{
-	    Logger.getLogger( RPCHelper.class.getName() ).
-		    log( Level.SEVERE, null, ex );
-	}
+	writer.write( command_opt );
+	writer.newLine();
+	writer.flush();
     }
 
     private Boolean navigateToOutlets( BufferedReader reader,
@@ -122,16 +115,25 @@ public class RPCHelper
 	String line = "";
 	try
 	{
-	    while ( !line.contains( "6)...Logout" ) )
-	    {
-		line = reader.readLine();
-	    }
-	    while ( (char) reader.read() != '>' )
-	    {
-	    }
-	    writer.write( OUTLETS_OPT );
-	    writer.newLine();
-	    writer.flush();
+	    navigateTo( reader, writer, "6)...Logout", OUTLETS_OPT );
+	}
+	catch ( IOException ex )
+	{
+	    return Boolean.FALSE;
+	}
+	return Boolean.TRUE;
+    }
+
+    private boolean navigateToOutletRename( BufferedReader reader,
+	    BufferedWriter writer )
+    {
+	String line = "";
+	try
+	{
+	    navigateTo( reader, writer, "6)...Logout", CONFIG_OPT );
+	    navigateTo( reader, writer, "6)...Outlets", CONFIG_OUTLETS_OPT );
+	    navigateTo( reader, writer, "6)...Display Outlet Users",
+		    RENAME_CONFIG_OPT );
 	}
 	catch ( IOException ex )
 	{
@@ -176,7 +178,9 @@ public class RPCHelper
 	}
 	catch ( IOException ex )
 	{
-
+	    Logger.getLogger( RPCHelper.class
+		    .getName() ).
+		    log( Level.SEVERE, null, ex );
 	}
 	return outlets;
     }
@@ -197,8 +201,8 @@ public class RPCHelper
 	return outlet;
     }
 
-    private void powerOnOutlet( Integer outletId, BufferedReader reader,
-	    BufferedWriter writer )
+    private void executeOutletCommand( Integer outletId, BufferedReader reader,
+	    BufferedWriter writer, String command )
     {
 	String line = "";
 	try
@@ -210,7 +214,7 @@ public class RPCHelper
 	    while ( (char) reader.read() != '>' )
 	    {
 	    }
-	    writer.write( "on " + outletId );
+	    writer.write( command + " " + outletId );
 	    writer.newLine();
 	    writer.flush();
 	    while ( (char) reader.read() != '>' )
@@ -222,62 +226,52 @@ public class RPCHelper
 	}
 	catch ( IOException ex )
 	{
+	    Logger.getLogger( RPCHelper.class
+		    .getName() ).
+		    log( Level.SEVERE, null, ex );
 	}
     }
 
-    private void powerOffOutlet( Integer outletId, BufferedReader reader,
-	    BufferedWriter writer )
+    public void outletCommand( Integer outletId, String command )
     {
-	String line = "";
 	try
 	{
-	    while ( !line.contains( "Type \"Help\" for a list of commands" ) )
+	    SocketHelper socketHelper = new SocketHelper( TCP_PORT, rpcIp );
+	    BufferedReader reader = socketHelper.getReader();
+	    BufferedWriter writer = socketHelper.getWriter();
+
+	    if ( navigateToOutlets( reader, writer ) )
 	    {
-		line = reader.readLine();
+		executeOutletCommand( outletId, reader, writer, command );
 	    }
-	    while ( (char) reader.read() != '>' )
-	    {
-	    }
-	    writer.write( "off " + outletId );
-	    writer.newLine();
-	    writer.flush();
-	    while ( (char) reader.read() != '>' )
-	    {
-	    }
-	    writer.write( "y" );
-	    writer.newLine();
-	    writer.flush();
+	    reader.close();
+	    writer.close();
 	}
 	catch ( IOException ex )
 	{
+	    Logger.getLogger( RPCHelper.class.getName() ).
+		    log( Level.SEVERE, null, ex );
 	}
     }
 
-    private void rebootOutlet( Integer outletId, BufferedReader reader,
-	    BufferedWriter writer )
+    private void executeRename( BufferedReader reader, BufferedWriter writer,
+	    Integer outletId, String newName )
     {
-	String line = "";
 	try
 	{
-	    while ( !line.contains( "Type \"Help\" for a list of commands" ) )
-	    {
-		line = reader.readLine();
-	    }
+	    navigateTo( reader, writer, "8)...", outletId );
 	    while ( (char) reader.read() != '>' )
 	    {
 	    }
-	    writer.write( "reboot " + outletId );
-	    writer.newLine();
-	    writer.flush();
-	    while ( (char) reader.read() != '>' )
-	    {
-	    }
-	    writer.write( "y" );
+	    writer.write( newName );
 	    writer.newLine();
 	    writer.flush();
 	}
 	catch ( IOException ex )
 	{
+	    Logger.getLogger( RPCHelper.class
+		    .getName() ).
+		    log( Level.SEVERE, null, ex );
 	}
     }
 

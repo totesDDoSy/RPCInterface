@@ -15,6 +15,10 @@ and open the template in the editor.
 	<script th:src="@{javascript/rpclist.js}"></script>
     </head>
     <body>
+	<div id="error-alert" class="alert alert-danger alert-dismissable" style="display:none">
+	    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	    <div id="error-alert-connect" ><strong>ERROR: </strong></div>
+	</div>
 	<div class="container">
 	    <div class="row">
 		<h3>&nbsp;</h3>
