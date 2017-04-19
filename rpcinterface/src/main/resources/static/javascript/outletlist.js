@@ -4,6 +4,11 @@ $(document).ready(function ()
     initButtonListeners();
     initForms();
 
+    $(document).on('shown.bs.modal', function ()
+    {
+	console.log("modal shown");
+    });
+
     function initRowSelecter()
     {
 	$('tr').on('click', function ()
@@ -33,27 +38,94 @@ $(document).ready(function ()
 	    let outletid = $('.info').children('td').eq(0).text();
 	    let path = window.location.pathname.split('/');
 	    let rpcid = path[path.length - 1];
-	    window.location.href = '/outlets/' + rpcid + '/on/' + outletid;
+
+	    $(this).button('loading');
+
+	    ajaxCommandCall({
+		command: 'on',
+		rpcid: rpcid,
+		outletid: outletid
+	    });
 	});
 	$('#off-button').on('click', function ()
 	{
 	    let outletid = $('.info').children('td').eq(0).text();
 	    let path = window.location.pathname.split('/');
 	    let rpcid = path[path.length - 1];
-	    window.location.href = '/outlets/' + rpcid + '/off/' + outletid;
+
+	    $(this).button('loading');
+
+	    ajaxCommandCall({
+		command: 'off',
+		rpcid: rpcid,
+		outletid: outletid
+	    });
 	});
 	$('#reboot-button').on('click', function ()
 	{
 	    let outletid = $('.info').children('td').eq(0).text();
 	    let path = window.location.pathname.split('/');
 	    let rpcid = path[path.length - 1];
-	    window.location.href = '/outlets/' + rpcid + '/reboot/' + outletid;
+
+	    $(this).button('loading');
+
+	    let successCallback = function (response)
+	    {
+		$('.info').children('td').eq(2).children('span').eq(0).text("Rbt").removeClass('text-success').addClass('text-info');
+		setTimeout(function () {
+		    location.reload();
+		}, 12000);
+	    };
+
+	    ajaxCommandCall({
+		command: 'reboot',
+		rpcid: rpcid,
+		outletid: outletid,
+		successCallback: successCallback
+	    });
 	});
 	$('#refresh-button').on('click', function ()
 	{
-	    let path = window.location.pathname.split('/');
-	    let rpcid = path[path.length - 1];
-	    window.location.href = '/outlets/' + rpcid;
+	    location.reload();
+	});
+    }
+
+    /**
+     *
+     * @param {Object} opts
+     *	command, rpcid, outletid, newName, args, successCallback, errorCallback, completeCallback
+     * @returns {undefined}
+     */
+    function ajaxCommandCall(opts)
+    {
+	let data = JSON.stringify({
+	    command: opts.command,
+	    rpcId: opts.rpcid,
+	    outletId: opts.outletid,
+	    newName: opts.newName,
+	    args: opts.args
+	});
+
+	if (opts.successCallback === undefined)
+	{
+	    opts.successCallback = function ()
+	    {
+		setTimeout(function () {
+		    location.reload();
+		}, 1700);
+	    };
+	}
+
+	$.ajax({
+	    type: "POST",
+	    contentType: "application/json",
+	    url: "/outlets/command",
+	    data: data,
+	    dataType: "json",
+	    timeout: 60000,
+	    success: opts.successCallback,
+	    error: opts.errorCallback,
+	    complete: opts.completeCallback
 	});
     }
 
@@ -66,29 +138,24 @@ $(document).ready(function ()
 	    // Disable submit when it's clicked
 	    $('#rename-submit').addClass('disabled');
 
+	    $('#edit-button').button('loading');
+
 	    let outletid = $('.info').children('td').eq(0).text();
 	    let path = window.location.pathname.split('/');
 	    let rpcid = path[path.length - 1];
-	    let data = JSON.stringify($('#rename-name').val());
 
-	    $.ajax({
-		type: "POST",
-		contentType: "application/json",
-		url: "/outlets/" + rpcid + "/rename/" + outletid,
-		data: data,
-		dataType: 'json',
-		timeout: 60000,
-		success: function (response) {
-		    console.dir(response);
-		},
-		error: function (response) {
-		    console.dir(response);
-		},
-		complete: function () {
-		    $('#rename-close').click();
-		    $('#rename-submit').removeClass('disabled');
-		    $('#rename-name').val('');
-		}
+	    let completeCallback = function () {
+		$('#rename-close').click();
+		$('#rename-submit').removeClass('disabled');
+		$('#rename-name').val('');
+	    };
+
+	    ajaxCommandCall({
+		command: 'rename',
+		rpcid: rpcid,
+		outletid: outletid,
+		newName: $('#rename-name').val(),
+		completeCallback: completeCallback
 	    });
 	});
     }

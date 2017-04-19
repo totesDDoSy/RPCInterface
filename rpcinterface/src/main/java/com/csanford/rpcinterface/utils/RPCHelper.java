@@ -104,7 +104,10 @@ public class RPCHelper
 	while ( (char) reader.read() != '>' )
 	{
 	}
-	writer.write( command_opt );
+	if ( command_opt > -1 )
+	{
+	    writer.write( command_opt );
+	}
 	writer.newLine();
 	writer.flush();
     }
@@ -259,11 +262,21 @@ public class RPCHelper
     {
 	try
 	{
-	    navigateTo( reader, writer, "8)...", outletId );
+	    navigateTo( reader, writer, "8)...", (int) outletId.toString().
+		    charAt( 0 ) );
 	    while ( (char) reader.read() != '>' )
 	    {
 	    }
 	    writer.write( newName );
+	    writer.newLine();
+	    writer.flush();
+	    navigateTo( reader, writer, "8)...", -1 );
+	    navigateTo( reader, writer, "6)...Display Outlet Users", -1 );
+	    navigateTo( reader, writer, "6)...Outlets", -1 );
+	    while ( (char) reader.read() != '>' )
+	    {
+	    }
+	    writer.write( "y" );
 	    writer.newLine();
 	    writer.flush();
 	}
