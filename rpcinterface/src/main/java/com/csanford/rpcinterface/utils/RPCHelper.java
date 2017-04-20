@@ -108,14 +108,13 @@ public class RPCHelper
 	{
 	    writer.write( command_opt );
 	}
-	writer.newLine();
+	writer.write( "\r\n" );
 	writer.flush();
     }
 
     private Boolean navigateToOutlets( BufferedReader reader,
 	    BufferedWriter writer )
     {
-	String line = "";
 	try
 	{
 	    navigateTo( reader, writer, "6)...Logout", OUTLETS_OPT );
@@ -218,13 +217,13 @@ public class RPCHelper
 	    {
 	    }
 	    writer.write( command + " " + outletId );
-	    writer.newLine();
+	    writer.write( "\r\n" );
 	    writer.flush();
 	    while ( (char) reader.read() != '>' )
 	    {
 	    }
 	    writer.write( "y" );
-	    writer.newLine();
+	    writer.write( "\r\n" );
 	    writer.flush();
 	}
 	catch ( IOException ex )
@@ -268,7 +267,7 @@ public class RPCHelper
 	    {
 	    }
 	    writer.write( newName );
-	    writer.newLine();
+	    writer.write( "\r\n" );
 	    writer.flush();
 	    navigateTo( reader, writer, "8)...", -1 );
 	    navigateTo( reader, writer, "6)...Display Outlet Users", -1 );
@@ -277,7 +276,7 @@ public class RPCHelper
 	    {
 	    }
 	    writer.write( "y" );
-	    writer.newLine();
+	    writer.write( "\r\n" );
 	    writer.flush();
 	}
 	catch ( IOException ex )

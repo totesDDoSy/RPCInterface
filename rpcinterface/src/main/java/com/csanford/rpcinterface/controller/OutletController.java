@@ -1,7 +1,5 @@
 package com.csanford.rpcinterface.controller;
 
-import static java.lang.Thread.sleep;
-
 import com.csanford.rpcinterface.ajax.AjaxResponseBody;
 import com.csanford.rpcinterface.ajax.OutletCommandRequest;
 import com.csanford.rpcinterface.h2.RPCRepository;
