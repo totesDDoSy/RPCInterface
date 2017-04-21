@@ -1,0 +1,422 @@
+2017-04-20 18:23:41.691  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Starting Application on Hephaestus with PID 3372 (D:\workspace\Netbeans\SpringFramework\rpcinterface\target\classes started by Zer0E in D:\workspace\Netbeans\SpringFramework\rpcinterface)
+2017-04-20 18:23:41.693  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : No active profile set, falling back to default profiles: default
+2017-04-20 18:23:41.959  INFO 3372 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@496dcc89: startup date [Thu Apr 20 18:23:41 MDT 2017]; root of context hierarchy
+2017-04-20 18:23:43.360  INFO 3372 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$14e58015] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-20 18:23:43.737  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-04-20 18:23:43.748  INFO 3372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-04-20 18:23:43.749  INFO 3372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-04-20 18:23:43.840  INFO 3372 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-04-20 18:23:43.840  INFO 3372 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1894 ms
+2017-04-20 18:23:44.002  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-04-20 18:23:44.004  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2017-04-20 18:23:44.007  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-04-20 18:23:44.008  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-04-20 18:23:44.009  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-04-20 18:23:44.009  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-04-20 18:23:44.478  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:23:44.494  INFO 3372 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-04-20 18:23:44.638  INFO 3372 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2017-04-20 18:23:44.639  INFO 3372 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-04-20 18:23:44.641  INFO 3372 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-04-20 18:23:44.676  INFO 3372 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-04-20 18:23:44.782  INFO 3372 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-20 18:23:45.207  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:23:45.772  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@496dcc89: startup date [Thu Apr 20 18:23:41 MDT 2017]; root of context hierarchy
+2017-04-20 18:23:45.861  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.OutletController.displayOutletList(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:23:45.862  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/command],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.csanford.rpcinterface.controller.OutletController.outletCommand(com.csanford.rpcinterface.ajax.OutletCommandRequest,org.springframework.validation.Errors)
+2017-04-20 18:23:45.865  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.addRpc(com.csanford.rpcinterface.model.RPCModel,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-04-20 18:23:45.866  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayRpcList(org.springframework.ui.Model)
+2017-04-20 18:23:45.866  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayAddRpc(com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:23:45.866  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayEditRpc(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:23:45.866  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.editRpc(java.lang.Long,com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:23:45.867  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.deleteRpc(java.lang.Long)
+2017-04-20 18:23:45.869  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-04-20 18:23:45.869  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-04-20 18:23:45.910  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:23:45.910  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:23:45.955  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:23:46.598  INFO 3372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-04-20 18:23:46.656  INFO 3372 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-04-20 18:23:46.718  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-04-20 18:23:46.725  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Started Application in 5.279 seconds (JVM running for 5.659)
+2017-04-20 18:23:51.248  INFO 3372 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-04-20 18:23:51.248  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-04-20 18:23:51.263  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+2017-04-20 18:23:51.329  INFO 3372 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-04-20 18:23:51.437  INFO 3372 --- [http-nio-8080-exec-1] c.c.r.controller.RPCController           : List of RPC entries: [RPC{id=1, name=rpc, ipaddr=10.0.0.253, username=user1, password=}]
+2017-04-20 18:24:01.144 ERROR 3372 --- [http-nio-8080-exec-8] c.c.r.controller.RPCController           : Invalid RPC: RPCModel{name=, ipaddr=, username=, password=}
+2017-04-20 18:24:09.990  INFO 3372 --- [http-nio-8080-exec-2] c.c.r.controller.RPCController           : List of RPC entries: [RPC{id=1, name=rpc, ipaddr=10.0.0.253, username=user1, password=}]
+2017-04-20 18:24:37.314  INFO 3372 --- [Thread-8] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@496dcc89: startup date [Thu Apr 20 18:23:41 MDT 2017]; root of context hierarchy
+2017-04-20 18:24:37.318  INFO 3372 --- [Thread-8] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-04-20 18:24:37.320  INFO 3372 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:24:37.584  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Starting Application on Hephaestus with PID 3372 (D:\workspace\Netbeans\SpringFramework\rpcinterface\target\classes started by Zer0E in D:\workspace\Netbeans\SpringFramework\rpcinterface)
+2017-04-20 18:24:37.584  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : No active profile set, falling back to default profiles: default
+2017-04-20 18:24:37.586  INFO 3372 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@38991fd0: startup date [Thu Apr 20 18:24:37 MDT 2017]; root of context hierarchy
+2017-04-20 18:24:38.045  INFO 3372 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$14e58015] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-20 18:24:38.131  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-04-20 18:24:38.133  INFO 3372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-04-20 18:24:38.133  INFO 3372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-04-20 18:24:38.142  INFO 3372 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-04-20 18:24:38.143  INFO 3372 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 557 ms
+2017-04-20 18:24:38.186  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-04-20 18:24:38.186  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2017-04-20 18:24:38.187  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-04-20 18:24:38.187  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-04-20 18:24:38.187  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-04-20 18:24:38.187  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-04-20 18:24:38.317  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:24:38.318  INFO 3372 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-04-20 18:24:38.325  INFO 3372 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-20 18:24:38.343  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:24:38.442  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@38991fd0: startup date [Thu Apr 20 18:24:37 MDT 2017]; root of context hierarchy
+2017-04-20 18:24:38.447  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.OutletController.displayOutletList(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:24:38.448  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/command],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.csanford.rpcinterface.controller.OutletController.outletCommand(com.csanford.rpcinterface.ajax.OutletCommandRequest,org.springframework.validation.Errors)
+2017-04-20 18:24:38.450  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.addRpc(com.csanford.rpcinterface.model.RPCModel,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-04-20 18:24:38.451  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayRpcList(org.springframework.ui.Model)
+2017-04-20 18:24:38.451  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayAddRpc(com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:24:38.452  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayEditRpc(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:24:38.452  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.editRpc(java.lang.Long,com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:24:38.452  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.deleteRpc(java.lang.Long)
+2017-04-20 18:24:38.453  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-04-20 18:24:38.455  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-04-20 18:24:38.462  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:24:38.462  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:24:38.474  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:24:38.524  INFO 3372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-04-20 18:24:38.564  INFO 3372 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-04-20 18:24:38.580  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-04-20 18:24:38.583  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Started Application in 1.042 seconds (JVM running for 57.516)
+2017-04-20 18:24:40.442  INFO 3372 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-04-20 18:24:40.443  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-04-20 18:24:40.450  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 6 ms
+2017-04-20 18:24:40.457  INFO 3372 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-04-20 18:24:40.464  INFO 3372 --- [http-nio-8080-exec-1] c.c.r.controller.RPCController           : List of RPC entries: [RPC{id=1, name=rpc, ipaddr=10.0.0.253, username=user1, password=}]
+2017-04-20 18:24:43.537 ERROR 3372 --- [http-nio-8080-exec-9] c.c.r.controller.RPCController           : Invalid RPC: RPCModel{name=, ipaddr=, username=, password=}
+org.springframework.validation.BeanPropertyBindingResult: 2 errors
+Field error in object 'RPCModel' on field 'name': rejected value []; codes [NotEmpty.RPCModel.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.name,name]; arguments []; default message [name]]; default message [may not be empty]
+Field error in object 'RPCModel' on field 'ipaddr': rejected value []; codes [NotEmpty.RPCModel.ipaddr,NotEmpty.ipaddr,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.ipaddr,ipaddr]; arguments []; default message [ipaddr]]; default message [may not be empty]
+2017-04-20 18:25:40.300  INFO 3372 --- [Thread-12] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@38991fd0: startup date [Thu Apr 20 18:24:37 MDT 2017]; root of context hierarchy
+2017-04-20 18:25:40.302  INFO 3372 --- [Thread-12] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-04-20 18:25:40.302  INFO 3372 --- [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:25:40.648  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Starting Application on Hephaestus with PID 3372 (D:\workspace\Netbeans\SpringFramework\rpcinterface\target\classes started by Zer0E in D:\workspace\Netbeans\SpringFramework\rpcinterface)
+2017-04-20 18:25:40.649  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : No active profile set, falling back to default profiles: default
+2017-04-20 18:25:40.652  INFO 3372 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@45984938: startup date [Thu Apr 20 18:25:40 MDT 2017]; root of context hierarchy
+2017-04-20 18:25:41.115  INFO 3372 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$14e58015] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-20 18:25:41.197  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-04-20 18:25:41.200  INFO 3372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-04-20 18:25:41.200  INFO 3372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-04-20 18:25:41.209  INFO 3372 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-04-20 18:25:41.210  INFO 3372 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 558 ms
+2017-04-20 18:25:41.239  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-04-20 18:25:41.239  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2017-04-20 18:25:41.239  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-04-20 18:25:41.239  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-04-20 18:25:41.242  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-04-20 18:25:41.242  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-04-20 18:25:41.346  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:25:41.347  INFO 3372 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-04-20 18:25:41.360  INFO 3372 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-20 18:25:41.387  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:25:41.490  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@45984938: startup date [Thu Apr 20 18:25:40 MDT 2017]; root of context hierarchy
+2017-04-20 18:25:41.497  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.OutletController.displayOutletList(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:25:41.499  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/command],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.csanford.rpcinterface.controller.OutletController.outletCommand(com.csanford.rpcinterface.ajax.OutletCommandRequest,org.springframework.validation.Errors)
+2017-04-20 18:25:41.501  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.addRpc(com.csanford.rpcinterface.model.RPCModel,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-04-20 18:25:41.502  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayRpcList(org.springframework.ui.Model)
+2017-04-20 18:25:41.502  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayAddRpc(com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:25:41.503  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayEditRpc(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:25:41.503  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.editRpc(java.lang.Long,com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:25:41.503  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.deleteRpc(java.lang.Long)
+2017-04-20 18:25:41.504  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-04-20 18:25:41.505  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-04-20 18:25:41.523  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:25:41.526  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:25:41.546  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:25:41.606  INFO 3372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-04-20 18:25:41.637  INFO 3372 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-04-20 18:25:41.645  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-04-20 18:25:41.647  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Started Application in 1.036 seconds (JVM running for 120.581)
+2017-04-20 18:25:54.290  INFO 3372 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-04-20 18:25:54.291  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-04-20 18:25:54.295  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 4 ms
+2017-04-20 18:25:54.300  INFO 3372 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-04-20 18:25:54.305  INFO 3372 --- [http-nio-8080-exec-1] c.c.r.controller.RPCController           : List of RPC entries: [RPC{id=1, name=rpc, ipaddr=10.0.0.253, username=user1, password=}]
+2017-04-20 18:25:55.452  INFO 3372 --- [http-nio-8080-exec-5] c.c.r.controller.RPCController           : List of RPC entries: [RPC{id=1, name=rpc, ipaddr=10.0.0.253, username=user1, password=}]
+2017-04-20 18:25:58.423 ERROR 3372 --- [http-nio-8080-exec-3] c.c.r.controller.RPCController           : Invalid RPC: RPCModel{name=, ipaddr=, username=, password=}
+[Field error in object 'RPCModel' on field 'name': rejected value []; codes [NotEmpty.RPCModel.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.name,name]; arguments []; default message [name]]; default message [may not be empty], Field error in object 'RPCModel' on field 'ipaddr': rejected value []; codes [NotEmpty.RPCModel.ipaddr,NotEmpty.ipaddr,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.ipaddr,ipaddr]; arguments []; default message [ipaddr]]; default message [may not be empty]]
+2017-04-20 18:26:59.399  INFO 3372 --- [Thread-20] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@45984938: startup date [Thu Apr 20 18:25:40 MDT 2017]; root of context hierarchy
+2017-04-20 18:26:59.401  INFO 3372 --- [Thread-20] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-04-20 18:26:59.402  INFO 3372 --- [Thread-20] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:26:59.767  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Starting Application on Hephaestus with PID 3372 (D:\workspace\Netbeans\SpringFramework\rpcinterface\target\classes started by Zer0E in D:\workspace\Netbeans\SpringFramework\rpcinterface)
+2017-04-20 18:26:59.768  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : No active profile set, falling back to default profiles: default
+2017-04-20 18:26:59.769  INFO 3372 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@64ef65de: startup date [Thu Apr 20 18:26:59 MDT 2017]; root of context hierarchy
+2017-04-20 18:27:00.275  INFO 3372 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$14e58015] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-20 18:27:00.409  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-04-20 18:27:00.411  INFO 3372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-04-20 18:27:00.417  INFO 3372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-04-20 18:27:00.438  INFO 3372 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-04-20 18:27:00.439  INFO 3372 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 670 ms
+2017-04-20 18:27:00.487  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-04-20 18:27:00.489  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2017-04-20 18:27:00.491  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-04-20 18:27:00.491  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-04-20 18:27:00.491  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-04-20 18:27:00.492  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-04-20 18:27:00.629  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:27:00.630  INFO 3372 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-04-20 18:27:00.639  INFO 3372 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-20 18:27:00.666  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:27:00.790  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@64ef65de: startup date [Thu Apr 20 18:26:59 MDT 2017]; root of context hierarchy
+2017-04-20 18:27:00.811  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.OutletController.displayOutletList(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:27:00.811  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/command],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.csanford.rpcinterface.controller.OutletController.outletCommand(com.csanford.rpcinterface.ajax.OutletCommandRequest,org.springframework.validation.Errors)
+2017-04-20 18:27:00.812  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.addRpc(com.csanford.rpcinterface.model.RPCModel,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-04-20 18:27:00.816  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayRpcList(org.springframework.ui.Model)
+2017-04-20 18:27:00.817  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayAddRpc(com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:27:00.817  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayEditRpc(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:27:00.818  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.editRpc(java.lang.Long,com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:27:00.818  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.deleteRpc(java.lang.Long)
+2017-04-20 18:27:00.819  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-04-20 18:27:00.820  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-04-20 18:27:00.868  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:27:00.868  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:27:00.890  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:27:00.958  INFO 3372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-04-20 18:27:01.005  INFO 3372 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-04-20 18:27:01.018  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-04-20 18:27:01.019  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Started Application in 1.296 seconds (JVM running for 199.953)
+2017-04-20 18:27:04.999  INFO 3372 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-04-20 18:27:04.999  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-04-20 18:27:05.003  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 3 ms
+2017-04-20 18:27:05.007  INFO 3372 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-04-20 18:27:05.011  INFO 3372 --- [http-nio-8080-exec-1] c.c.r.controller.RPCController           : List of RPC entries: [RPC{id=1, name=rpc, ipaddr=10.0.0.253, username=user1, password=}]
+2017-04-20 18:27:05.788  INFO 3372 --- [http-nio-8080-exec-5] c.c.r.controller.RPCController           : List of RPC entries: [RPC{id=1, name=rpc, ipaddr=10.0.0.253, username=user1, password=}]
+2017-04-20 18:27:10.883 ERROR 3372 --- [http-nio-8080-exec-2] c.c.r.controller.RPCController           : Invalid RPC: RPCModel{name=, ipaddr=, username=, password=}
+[Field error in object 'RPCModel' on field 'name': rejected value []; codes [NotEmpty.RPCModel.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.name,name]; arguments []; default message [name]]; default message [may not be empty], Field error in object 'RPCModel' on field 'ipaddr': rejected value []; codes [NotEmpty.RPCModel.ipaddr,NotEmpty.ipaddr,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.ipaddr,ipaddr]; arguments []; default message [ipaddr]]; default message [may not be empty]]
+2017-04-20 18:27:19.453  INFO 3372 --- [Thread-28] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@64ef65de: startup date [Thu Apr 20 18:26:59 MDT 2017]; root of context hierarchy
+2017-04-20 18:27:19.454  INFO 3372 --- [Thread-28] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-04-20 18:27:19.455  INFO 3372 --- [Thread-28] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:27:19.761  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Starting Application on Hephaestus with PID 3372 (D:\workspace\Netbeans\SpringFramework\rpcinterface\target\classes started by Zer0E in D:\workspace\Netbeans\SpringFramework\rpcinterface)
+2017-04-20 18:27:19.762  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : No active profile set, falling back to default profiles: default
+2017-04-20 18:27:19.769  INFO 3372 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5462471b: startup date [Thu Apr 20 18:27:19 MDT 2017]; root of context hierarchy
+2017-04-20 18:27:20.203  INFO 3372 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$14e58015] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-20 18:27:20.273  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-04-20 18:27:20.274  INFO 3372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-04-20 18:27:20.274  INFO 3372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-04-20 18:27:20.285  INFO 3372 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-04-20 18:27:20.285  INFO 3372 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 516 ms
+2017-04-20 18:27:20.317  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-04-20 18:27:20.318  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2017-04-20 18:27:20.318  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-04-20 18:27:20.318  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-04-20 18:27:20.319  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-04-20 18:27:20.319  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-04-20 18:27:20.412  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:27:20.412  INFO 3372 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-04-20 18:27:20.423  INFO 3372 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-20 18:27:20.444  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:27:20.525  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5462471b: startup date [Thu Apr 20 18:27:19 MDT 2017]; root of context hierarchy
+2017-04-20 18:27:20.533  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.OutletController.displayOutletList(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:27:20.533  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/command],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.csanford.rpcinterface.controller.OutletController.outletCommand(com.csanford.rpcinterface.ajax.OutletCommandRequest,org.springframework.validation.Errors)
+2017-04-20 18:27:20.534  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.addRpc(com.csanford.rpcinterface.model.RPCModel,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-04-20 18:27:20.534  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayRpcList(org.springframework.ui.Model)
+2017-04-20 18:27:20.534  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayAddRpc(com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:27:20.535  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayEditRpc(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:27:20.535  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.editRpc(java.lang.Long,com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:27:20.535  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.deleteRpc(java.lang.Long)
+2017-04-20 18:27:20.535  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-04-20 18:27:20.536  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-04-20 18:27:20.540  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:27:20.540  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:27:20.554  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:27:20.619  INFO 3372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-04-20 18:27:20.653  INFO 3372 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-04-20 18:27:20.665  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-04-20 18:27:20.667  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Started Application in 0.938 seconds (JVM running for 219.6)
+2017-04-20 18:27:29.078  INFO 3372 --- [Thread-36] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5462471b: startup date [Thu Apr 20 18:27:19 MDT 2017]; root of context hierarchy
+2017-04-20 18:27:29.081  INFO 3372 --- [Thread-36] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-04-20 18:27:29.081  INFO 3372 --- [Thread-36] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:27:29.378  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Starting Application on Hephaestus with PID 3372 (D:\workspace\Netbeans\SpringFramework\rpcinterface\target\classes started by Zer0E in D:\workspace\Netbeans\SpringFramework\rpcinterface)
+2017-04-20 18:27:29.379  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : No active profile set, falling back to default profiles: default
+2017-04-20 18:27:29.386  INFO 3372 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6d626fb1: startup date [Thu Apr 20 18:27:29 MDT 2017]; root of context hierarchy
+2017-04-20 18:27:29.863  INFO 3372 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$14e58015] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-20 18:27:29.962  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-04-20 18:27:29.965  INFO 3372 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-04-20 18:27:29.965  INFO 3372 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-04-20 18:27:29.975  INFO 3372 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-04-20 18:27:29.975  INFO 3372 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 589 ms
+2017-04-20 18:27:30.002  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-04-20 18:27:30.002  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2017-04-20 18:27:30.003  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-04-20 18:27:30.004  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-04-20 18:27:30.004  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-04-20 18:27:30.004  INFO 3372 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-04-20 18:27:30.103  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:27:30.104  INFO 3372 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-04-20 18:27:30.112  INFO 3372 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-20 18:27:30.137  INFO 3372 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 18:27:30.237  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6d626fb1: startup date [Thu Apr 20 18:27:29 MDT 2017]; root of context hierarchy
+2017-04-20 18:27:30.244  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.OutletController.displayOutletList(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:27:30.245  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/command],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.csanford.rpcinterface.controller.OutletController.outletCommand(com.csanford.rpcinterface.ajax.OutletCommandRequest,org.springframework.validation.Errors)
+2017-04-20 18:27:30.247  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.addRpc(com.csanford.rpcinterface.model.RPCModel,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-04-20 18:27:30.248  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayRpcList(org.springframework.ui.Model)
+2017-04-20 18:27:30.248  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayAddRpc(com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:27:30.249  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayEditRpc(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 18:27:30.249  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.editRpc(java.lang.Long,com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 18:27:30.249  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.deleteRpc(java.lang.Long)
+2017-04-20 18:27:30.251  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-04-20 18:27:30.251  INFO 3372 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-04-20 18:27:30.258  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:27:30.258  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:27:30.268  INFO 3372 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 18:27:30.325  INFO 3372 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-04-20 18:27:30.361  INFO 3372 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-04-20 18:27:30.372  INFO 3372 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-04-20 18:27:30.373  INFO 3372 --- [restartedMain] com.csanford.rpcinterface.Application    : Started Application in 1.038 seconds (JVM running for 229.307)
+2017-04-20 18:27:30.433  INFO 3372 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-04-20 18:27:30.433  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-04-20 18:27:30.435  INFO 3372 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 1 ms
+2017-04-20 18:27:30.438  INFO 3372 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-04-20 18:27:30.442  INFO 3372 --- [http-nio-8080-exec-1] c.c.r.controller.RPCController           : List of RPC entries: [RPC{id=1, name=rpc, ipaddr=10.0.0.253, username=user1, password=}]
+2017-04-20 18:27:31.711  INFO 3372 --- [http-nio-8080-exec-5] c.c.r.controller.RPCController           : List of RPC entries: [RPC{id=1, name=rpc, ipaddr=10.0.0.253, username=user1, password=}]
+2017-04-20 18:27:33.849 ERROR 3372 --- [http-nio-8080-exec-2] c.c.r.controller.RPCController           : Invalid RPC: RPCModel{name=, ipaddr=, username=, password=}
+Errors:
+org.springframework.validation.BeanPropertyBindingResult: 2 errors
+Field error in object 'RPCModel' on field 'ipaddr': rejected value []; codes [NotEmpty.RPCModel.ipaddr,NotEmpty.ipaddr,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.ipaddr,ipaddr]; arguments []; default message [ipaddr]]; default message [may not be empty]
+Field error in object 'RPCModel' on field 'name': rejected value []; codes [NotEmpty.RPCModel.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.name,name]; arguments []; default message [name]]; default message [may not be empty]
+2017-04-20 22:44:52.046  INFO 1228 --- [restartedMain] com.csanford.rpcinterface.Application    : Starting Application on Hephaestus with PID 1228 (D:\workspace\Netbeans\SpringFramework\rpcinterface\target\classes started by Zer0E in D:\workspace\Netbeans\SpringFramework\rpcinterface)
+2017-04-20 22:44:52.048  INFO 1228 --- [restartedMain] com.csanford.rpcinterface.Application    : No active profile set, falling back to default profiles: default
+2017-04-20 22:44:52.421  INFO 1228 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@496dcc89: startup date [Thu Apr 20 22:44:52 MDT 2017]; root of context hierarchy
+2017-04-20 22:44:54.367  INFO 1228 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$14e58015] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-20 22:44:54.874  INFO 1228 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-04-20 22:44:54.891  INFO 1228 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-04-20 22:44:54.893  INFO 1228 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-04-20 22:44:55.030  INFO 1228 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-04-20 22:44:55.031  INFO 1228 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2620 ms
+2017-04-20 22:44:55.195  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-04-20 22:44:55.196  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2017-04-20 22:44:55.199  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-04-20 22:44:55.200  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-04-20 22:44:55.201  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-04-20 22:44:55.201  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-04-20 22:44:55.820  INFO 1228 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-04-20 22:44:55.841  INFO 1228 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-04-20 22:44:55.978  INFO 1228 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2017-04-20 22:44:55.983  INFO 1228 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-04-20 22:44:55.985  INFO 1228 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-04-20 22:44:56.135  INFO 1228 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-04-20 22:44:56.258  INFO 1228 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-20 22:44:56.795  INFO 1228 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 22:44:57.626  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@496dcc89: startup date [Thu Apr 20 22:44:52 MDT 2017]; root of context hierarchy
+2017-04-20 22:44:57.754  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/command],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.csanford.rpcinterface.controller.OutletController.outletCommand(com.csanford.rpcinterface.ajax.OutletCommandRequest,org.springframework.validation.Errors)
+2017-04-20 22:44:57.757  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.OutletController.displayOutletList(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 22:44:57.762  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayRpcList(org.springframework.ui.Model)
+2017-04-20 22:44:57.763  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.deleteRpc(java.lang.Long)
+2017-04-20 22:44:57.765  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayEditRpc(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 22:44:57.767  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.addRpc(com.csanford.rpcinterface.model.RPCModel,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-04-20 22:44:57.780  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayAddRpc(com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 22:44:57.787  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.editRpc(java.lang.Long,com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 22:44:57.791  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-04-20 22:44:57.791  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-04-20 22:44:57.853  INFO 1228 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 22:44:57.853  INFO 1228 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 22:44:57.933  INFO 1228 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 22:44:58.905  INFO 1228 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-04-20 22:44:59.023  INFO 1228 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-04-20 22:44:59.117  INFO 1228 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-04-20 22:44:59.123  INFO 1228 --- [restartedMain] com.csanford.rpcinterface.Application    : Started Application in 7.419 seconds (JVM running for 7.859)
+2017-04-20 22:46:23.659  INFO 1228 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-04-20 22:46:23.659  INFO 1228 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-04-20 22:46:23.679  INFO 1228 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2017-04-20 22:46:23.740  INFO 1228 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-04-20 22:46:23.895  INFO 1228 --- [http-nio-8080-exec-1] c.c.r.controller.RPCController           : List of RPC entries: [RPC{id=1, name=rpc, ipaddr=10.0.0.253, username=user1, password=}]
+2017-04-20 22:47:12.249  INFO 1228 --- [http-nio-8080-exec-8] c.c.r.controller.RPCController           : Invalid RPC: RPCModel{name=, ipaddr=, username=, password=}
+Errors:
+org.springframework.validation.BeanPropertyBindingResult: 2 errors
+Field error in object 'RPCModel' on field 'name': rejected value []; codes [NotEmpty.RPCModel.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.name,name]; arguments []; default message [name]]; default message [may not be empty]
+Field error in object 'RPCModel' on field 'ipaddr': rejected value []; codes [NotEmpty.RPCModel.ipaddr,NotEmpty.ipaddr,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.ipaddr,ipaddr]; arguments []; default message [ipaddr]]; default message [may not be empty]
+2017-04-20 22:47:59.054  INFO 1228 --- [Thread-8] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@496dcc89: startup date [Thu Apr 20 22:44:52 MDT 2017]; root of context hierarchy
+2017-04-20 22:47:59.057  INFO 1228 --- [Thread-8] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-04-20 22:47:59.058  INFO 1228 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 22:47:59.680  INFO 1228 --- [restartedMain] com.csanford.rpcinterface.Application    : Starting Application on Hephaestus with PID 1228 (D:\workspace\Netbeans\SpringFramework\rpcinterface\target\classes started by Zer0E in D:\workspace\Netbeans\SpringFramework\rpcinterface)
+2017-04-20 22:47:59.681  INFO 1228 --- [restartedMain] com.csanford.rpcinterface.Application    : No active profile set, falling back to default profiles: default
+2017-04-20 22:47:59.684  INFO 1228 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@76b40a7d: startup date [Thu Apr 20 22:47:59 MDT 2017]; root of context hierarchy
+2017-04-20 22:48:00.398  INFO 1228 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$14e58015] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-20 22:48:00.565  INFO 1228 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-04-20 22:48:00.566  INFO 1228 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-04-20 22:48:00.567  INFO 1228 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-04-20 22:48:00.575  INFO 1228 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-04-20 22:48:00.576  INFO 1228 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 892 ms
+2017-04-20 22:48:00.613  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-04-20 22:48:00.614  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2017-04-20 22:48:00.615  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-04-20 22:48:00.615  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-04-20 22:48:00.616  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-04-20 22:48:00.616  INFO 1228 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-04-20 22:48:00.802  INFO 1228 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-04-20 22:48:00.803  INFO 1228 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-04-20 22:48:00.814  INFO 1228 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-20 22:48:00.846  INFO 1228 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-04-20 22:48:00.976  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@76b40a7d: startup date [Thu Apr 20 22:47:59 MDT 2017]; root of context hierarchy
+2017-04-20 22:48:00.990  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/command],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.csanford.rpcinterface.controller.OutletController.outletCommand(com.csanford.rpcinterface.ajax.OutletCommandRequest,org.springframework.validation.Errors)
+2017-04-20 22:48:01.000  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/outlets/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.OutletController.displayOutletList(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 22:48:01.003  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayRpcList(org.springframework.ui.Model)
+2017-04-20 22:48:01.003  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete/{rpcid}]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.deleteRpc(java.lang.Long)
+2017-04-20 22:48:01.004  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayEditRpc(java.lang.Long,org.springframework.ui.Model)
+2017-04-20 22:48:01.004  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.addRpc(com.csanford.rpcinterface.model.RPCModel,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-04-20 22:48:01.006  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[GET]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.displayAddRpc(com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 22:48:01.007  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/edit/{rpcid}],methods=[POST]}" onto public java.lang.String com.csanford.rpcinterface.controller.RPCController.editRpc(java.lang.Long,com.csanford.rpcinterface.model.RPCModel)
+2017-04-20 22:48:01.008  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-04-20 22:48:01.009  INFO 1228 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-04-20 22:48:01.027  INFO 1228 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 22:48:01.027  INFO 1228 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 22:48:01.042  INFO 1228 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-20 22:48:01.111  INFO 1228 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-04-20 22:48:01.170  INFO 1228 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-04-20 22:48:01.189  INFO 1228 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-04-20 22:48:01.192  INFO 1228 --- [restartedMain] com.csanford.rpcinterface.Application    : Started Application in 1.581 seconds (JVM running for 189.928)
+2017-04-20 22:50:14.951  INFO 1228 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-04-20 22:50:14.952  INFO 1228 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-04-20 22:50:14.954  INFO 1228 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 2 ms
+2017-04-20 22:50:14.978  INFO 1228 --- [http-nio-8080-exec-1] c.c.r.controller.RPCController           : Invalid RPC: RPCModel{name=, ipaddr=, username=, password=}
+Errors:
+org.springframework.validation.BeanPropertyBindingResult: 2 errors
+Field error in object 'RPCModel' on field 'ipaddr': rejected value []; codes [NotEmpty.RPCModel.ipaddr,NotEmpty.ipaddr,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.ipaddr,ipaddr]; arguments []; default message [ipaddr]]; default message [may not be empty]
+Field error in object 'RPCModel' on field 'name': rejected value []; codes [NotEmpty.RPCModel.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [RPCModel.name,name]; arguments []; default message [name]]; default message [may not be empty]
+2017-04-20 22:50:54.747  INFO 1228 --- [http-nio-8080-exec-5] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-04-20 22:50:54.753  INFO 1228 --- [http-nio-8080-exec-5] c.c.r.controller.RPCController           : List of RPC entries: [RPC{id=1, name=rpc, ipaddr=10.0.0.253, username=user1, password=}]
+2017-04-20 22:51:30.651  INFO 1228 --- [http-nio-8080-exec-10] c.csanford.rpcinterface.utils.RPCHelper  : Entering getOutlets()
+2017-04-20 22:51:30.656  INFO 1228 --- [http-nio-8080-exec-10] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu
+2017-04-20 22:53:37.600  INFO 1228 --- [http-nio-8080-exec-6] c.csanford.rpcinterface.utils.RPCHelper  : Entering getOutlets()
+2017-04-20 22:53:37.601  INFO 1228 --- [http-nio-8080-exec-6] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu
+2017-04-20 22:53:42.842  INFO 1228 --- [http-nio-8080-exec-9] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu
+2017-04-20 22:53:44.851  INFO 1228 --- [http-nio-8080-exec-10] c.csanford.rpcinterface.utils.RPCHelper  : Entering getOutlets()
+2017-04-20 22:53:44.853  INFO 1228 --- [http-nio-8080-exec-10] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu
+2017-04-20 22:54:00.756  INFO 1228 --- [http-nio-8080-exec-4] c.csanford.rpcinterface.utils.RPCHelper  : Entering getOutlets()
+2017-04-20 22:54:00.759  INFO 1228 --- [http-nio-8080-exec-4] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu
+2017-04-20 22:54:05.833  INFO 1228 --- [http-nio-8080-exec-7] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu
+2017-04-20 22:54:18.128  INFO 1228 --- [http-nio-8080-exec-8] c.csanford.rpcinterface.utils.RPCHelper  : Entering getOutlets()
+2017-04-20 22:54:18.130  INFO 1228 --- [http-nio-8080-exec-8] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu
+2017-04-20 22:54:42.540  INFO 1228 --- [http-nio-8080-exec-1] c.csanford.rpcinterface.utils.RPCHelper  : Entering getOutlets()
+2017-04-20 22:54:42.542  INFO 1228 --- [http-nio-8080-exec-1] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu
+2017-04-20 22:55:06.454  INFO 1228 --- [http-nio-8080-exec-6] c.csanford.rpcinterface.utils.RPCHelper  : Entering getOutlets()
+2017-04-20 22:55:06.456  INFO 1228 --- [http-nio-8080-exec-6] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu
+2017-04-20 22:55:24.683  INFO 1228 --- [http-nio-8080-exec-10] c.csanford.rpcinterface.utils.RPCHelper  : Entering getOutlets()
+2017-04-20 22:55:24.685  INFO 1228 --- [http-nio-8080-exec-10] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu
+2017-04-20 22:55:30.131  INFO 1228 --- [http-nio-8080-exec-3] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu
+2017-04-20 22:55:42.424  INFO 1228 --- [http-nio-8080-exec-2] c.csanford.rpcinterface.utils.RPCHelper  : Entering getOutlets()
+2017-04-20 22:55:42.426  INFO 1228 --- [http-nio-8080-exec-2] c.csanford.rpcinterface.utils.RPCHelper  : Navigating to outlets menu

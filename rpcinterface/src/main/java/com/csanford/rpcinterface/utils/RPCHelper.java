@@ -6,13 +6,15 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class RPCHelper
 {
+    private static final Logger LOG = LoggerFactory.getLogger( RPCHelper.class );
+
     private final String rpcIp;
     private static final int OUTLETS_OPT = (int) '1';
 
@@ -32,6 +34,7 @@ public class RPCHelper
 
     public List<Outlet> getOutlets()
     {
+	LOG.info( "Entering getOutlets()" );
 	try
 	{
 	    SocketHelper socketHelper = new SocketHelper( TCP_PORT, rpcIp );
@@ -86,8 +89,7 @@ public class RPCHelper
 	}
 	catch ( IOException ex )
 	{
-	    Logger.getLogger( RPCHelper.class.getName() ).
-		    log( Level.SEVERE, null, ex );
+	    LOG.error( "ERROR: ", ex );
 	}
     }
 
@@ -115,6 +117,7 @@ public class RPCHelper
     private Boolean navigateToOutlets( BufferedReader reader,
 	    BufferedWriter writer )
     {
+	LOG.info( "Navigating to outlets menu" );
 	try
 	{
 	    navigateTo( reader, writer, "6)...Logout", OUTLETS_OPT );
@@ -180,15 +183,14 @@ public class RPCHelper
 	}
 	catch ( IOException ex )
 	{
-	    Logger.getLogger( RPCHelper.class
-		    .getName() ).
-		    log( Level.SEVERE, null, ex );
+	    LOG.error( "ERROR: ", ex );
 	}
 	return outlets;
     }
 
     private Outlet parseStringToOutlet( String line )
     {
+	LOG.debug( "Parsing the outlets." );
 	Outlet outlet = new Outlet();
 	Pattern outletPattern = Pattern.compile(
 		"\\s+(\\d)\\s+(.{10})\\s+(\\d)\\s+(O.{1,2})" );
@@ -228,9 +230,7 @@ public class RPCHelper
 	}
 	catch ( IOException ex )
 	{
-	    Logger.getLogger( RPCHelper.class
-		    .getName() ).
-		    log( Level.SEVERE, null, ex );
+	    LOG.error( "ERROR: ", ex );
 	}
     }
 
@@ -251,8 +251,7 @@ public class RPCHelper
 	}
 	catch ( IOException ex )
 	{
-	    Logger.getLogger( RPCHelper.class.getName() ).
-		    log( Level.SEVERE, null, ex );
+	    LOG.error( "ERROR: ", ex );
 	}
     }
 
@@ -281,9 +280,7 @@ public class RPCHelper
 	}
 	catch ( IOException ex )
 	{
-	    Logger.getLogger( RPCHelper.class
-		    .getName() ).
-		    log( Level.SEVERE, null, ex );
+	    LOG.error( "ERROR: ", ex );
 	}
     }
 

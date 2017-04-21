@@ -9,10 +9,10 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 public class RPCModel
 {
-	@NotEmpty
+    @NotEmpty
     String name;
 
-	@NotEmpty
+    @NotEmpty
     String ipaddr;
     String username;
     String password;
