@@ -6,7 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -15,12 +16,14 @@ import java.util.logging.Logger;
 public class SocketHelper
 {
 
-    private static final Logger LOG = Logger.getLogger( SocketHelper.class.
-	    getName() );
-    private Socket socket;
+    private static final Logger LOG = LoggerFactory.getLogger(
+	    SocketHelper.class );
+    private final Socket socket;
 
     public SocketHelper( int port, String serverName ) throws IOException
     {
+	LOG.info(
+		"Getting a socket for [server=" + serverName + ", port=" + port + "]" );
 	socket = new Socket( serverName, port );
     }
 
@@ -35,7 +38,7 @@ public class SocketHelper
 	}
 	catch ( IOException ex )
 	{
-	    LOG.severe( ex.getLocalizedMessage() );
+	    LOG.error( ex.getLocalizedMessage() );
 	}
 
 	return writer;
@@ -52,7 +55,7 @@ public class SocketHelper
 	}
 	catch ( IOException ex )
 	{
-	    LOG.severe( ex.getLocalizedMessage() );
+	    LOG.error( ex.getLocalizedMessage() );
 	}
 
 	return reader;

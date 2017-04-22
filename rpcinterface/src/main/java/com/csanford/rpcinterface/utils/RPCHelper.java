@@ -98,14 +98,17 @@ public class RPCHelper
 	    String lastLine, int command_opt ) throws
 	    IOException
     {
+	LOG.info( "Navigating menu to: " + lastLine );
 	String line = "";
 	while ( !line.contains( lastLine ) )
 	{
 	    line = reader.readLine();
+	    LOG.trace( line );
 	}
 	while ( (char) reader.read() != '>' )
 	{
 	}
+	LOG.info( "Inputting command_opt: " + command_opt );
 	if ( command_opt > -1 )
 	{
 	    writer.write( command_opt );
@@ -150,6 +153,7 @@ public class RPCHelper
     private List<Outlet> getOutletsFromOutletScreen(
 	    BufferedReader reader )
     {
+	LOG.info( "Getting the outlets from the screen." );
 	List<Outlet> outlets = new ArrayList<>();
 	String line = "";
 	Boolean parsingOutlets = false;
@@ -190,7 +194,7 @@ public class RPCHelper
 
     private Outlet parseStringToOutlet( String line )
     {
-	LOG.debug( "Parsing the outlets." );
+	LOG.info( "Parsing the outlets." );
 	Outlet outlet = new Outlet();
 	Pattern outletPattern = Pattern.compile(
 		"\\s+(\\d)\\s+(.{10})\\s+(\\d)\\s+(O.{1,2})" );
